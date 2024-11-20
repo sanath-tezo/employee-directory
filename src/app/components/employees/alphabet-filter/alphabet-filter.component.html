@@ -1,0 +1,15 @@
+<div class="alphabet-filter mx-4 row d-flex">
+    <div class="col"><img src="/assets/svgs/filter.svg" alt=""></div>
+
+    <div class="letter-buttons col-11 flex-grow-1 ">
+
+        <div class="row d-flex justify-content-between">
+            <button *ngFor="let letter of alphabet" (click)="filterByLetter(letter)" id="letter-button-{{letter}}"
+                class="letter-button">
+                {{ letter }}
+            </button>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,53 @@
+@import "../../../../styles.scss";
+
+.emp-table-wrapper{
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+.emp-table{
+    border-radius: 8px;
+    width: 100%;
+}
+tr {
+    border-top: 1px solid $cd8dbe0;
+}
+tr td{
+    padding: 10px 20px;
+}
+thead{
+    background-color: $ceaebee;
+}
+
+table {
+    border-collapse: collapse;  
+}
+thead input[type="button"]{
+    border: none;
+    font-weight: 600;
+    color: $c576580;
+    background-color: $ceaebee;
+}
+
+.sb-15{
+    width: 15px;
+    height: 15px;
+}
+
+.circle-avatar{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+}
+
+tbody tr:hover{
+background-color: $primary-shade;
+cursor: pointer;
+}
+
+#employee-delete-button{
+    background-color: $primary-color;
+    color: $white;
+    border-radius: 6px;
+    border: 1px solid $primary-color;
+    padding: 6px;
+}

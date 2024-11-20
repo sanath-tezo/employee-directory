@@ -1,0 +1,62 @@
+<div class="emp-table-wrapper mx-4 my-4" id="emp-table-id">
+
+
+
+    <div class="row py-4 px-2">
+        <div class="col">
+            <span>
+                <span><img src="/assets/svgs/arrow-turn-left-down.svg" alt=""></span>
+                <input type="button" value="Delete" id="employee-delete-button">
+            </span>
+        </div>
+        <div class="col text-end">
+            <span class="mr-2"><img src="/assets/svgs/table-add.svg" alt=""></span>
+        </div>
+
+
+    </div>
+    <table class="emp-table">
+        <thead>
+            <tr>
+                <td><input type="checkbox" name="" id="head-checkbox" class="table-header-checkbox"></td>
+                <td><span><input type="button" value="USER" class="sort-button"> <img src="../assets/svgs/sort.svg"
+                            alt="" class="sb-15"></span></td>
+                <td><span><input type="button" value="LOCATION" class="sort-button"> <img src="../assets/svgs/sort.svg"
+                            alt="" class="sb-15"></span></td>
+                <td><span><input type="button" value="DEPARTMENT" class="sort-button"> <img
+                            src="../assets/svgs/sort.svg" alt="" class="sb-15"></span></td>
+                <td><span><input type="button" value="ROLE" class="sort-button"> <img src="../assets/svgs/sort.svg"
+                            alt="" class="sb-15"></span></td>
+                <td><span><input type="button" value="EMP NO" class="sort-button"> <img src="../assets/svgs/sort.svg"
+                            alt="" class="sb-15"></span></td>
+                <td><span><input type="button" value="STATUS" class="sort-button"> <img src="../assets/svgs/sort.svg"
+                            alt="" class="sb-15"></span></td>
+                <td><span><input type="button" value="JOIN DT" class="sort-button"> <img src="../assets/svgs/sort.svg"
+                            alt="" class="sb-15"></span></td>
+                <td><img src="../assets/svgs/more-hz.svg" alt=""></td>
+            </tr>
+        </thead>
+
+
+
+        <tbody>
+            <tr *ngFor="let emp of employees">
+                <td><input type="checkbox" name="" id="head-checkbox" class="table-header-checkbox"></td>
+                <td><span><img src="{{emp.img}}" alt="" class="circle-avatar"> {{emp.name}}</span></td>
+                <td><span>{{emp.location}}</span></td>
+                <td><span>{{emp.department}}</span></td>
+                <td><span>{{emp.role}}</span></td>
+                <td><span>{{emp.empNo}}</span></td>
+                <td><span>{{emp.status}}</span></td>
+                <td><span>{{emp.joinDate}}</span></td>
+                <td><img src="../assets/svgs/more-hz.svg" alt=""></td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    
+
+
+
+</div>

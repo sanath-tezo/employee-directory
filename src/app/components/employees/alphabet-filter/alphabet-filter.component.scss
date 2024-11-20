@@ -1,0 +1,15 @@
+@import "../../../../styles.scss";
+
+.letter-button{
+    width: 30px;
+    height: 40px;
+    border-radius: 6px;
+    border: 1px solid $ceaebee;
+    margin: 2px;
+    background-color: $ceaebee;
+}
+
+.letter-button:hover{
+    box-shadow: 0 8px 16px $primary-shade;
+    font-weight: bold;
+}

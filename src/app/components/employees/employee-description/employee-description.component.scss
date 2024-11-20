@@ -1,0 +1,28 @@
+@import "../../../../styles.scss";
+
+
+.export-button{
+   background-color: $cFCFCFC;
+   border-radius: 6px;
+   padding: 4px 8px;
+   border:  1px solid $cd8dbe0;
+}
+
+.add-employee-button{
+   background-color: $primary-color;
+   color: $white;
+   border-radius: 6px;
+   border: 1px solid $primary-color;
+   padding: 4px 16px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.export-button:hover,.add-employee-button:hover{
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); 
+}
+
+@media only screen and (max-width: 650px){
+    .add-employee-button{
+        margin-top: 10px;
+    }
+}
