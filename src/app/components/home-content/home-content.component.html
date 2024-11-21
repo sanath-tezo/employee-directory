@@ -1,7 +1,15 @@
 <div class="home-content">
-    <app-search-bar></app-search-bar>
+    <app-search-bar (searchQueryChanged)="onSearchTextChanged($event)"></app-search-bar>
     <app-employee-description></app-employee-description>
-    <app-alphabet-filter></app-alphabet-filter>
+    <app-alphabet-filter (filterChanged)="onAlphabetFilterChanged($event)"></app-alphabet-filter>
     <app-filter-bar></app-filter-bar>
-    <app-employee-table></app-employee-table>
+    @if(this.isLoading){
+    <app-loading class="mx-auto"
+        style="  display: flex; justify-content: center; align-items: center; margin-top: 20%;">
+    </app-loading>
+    }
+    @else {
+    <app-employee-table [employees]="this.filteredEmployees"></app-employee-table>
+    }
+
 </div>

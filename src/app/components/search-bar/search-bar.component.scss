@@ -7,7 +7,17 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
+#search-input{
+    width: 70%;
+    height: 100%;
+    border: none;
+    font-size: 1.2rem;
+}
 
+#search-input:focus{
+    border: none;
+    outline: none;
+}
 .sb-h-20{
     height: 20px;
 }

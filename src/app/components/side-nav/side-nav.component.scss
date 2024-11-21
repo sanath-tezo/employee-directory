@@ -1,0 +1,109 @@
+@import "../../../styles.scss";
+
+.side-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 0px  0px 15px;
+    height: 100vh;
+}
+
+.update-confirmation{
+    background-color: $cFEF6F6;
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin-right: 20px;
+}
+
+.update-version{
+    color:$border-color;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.update-confirmation div{
+    margin-bottom: 15px;
+}
+
+.decline-button{
+    background-color: $primary-shade;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    color: $primary-color;
+}
+
+
+.accept-button{
+    background-color: $primary-color;
+    border: none;
+    color: $white;
+    border-radius: 6px;
+    padding: 10px;
+    margin-left: 4px;
+}
+
+
+.nav-icon{
+    width: 100%;
+    padding: 10px 10px;
+    margin-right: 30px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.nav-icon:hover{
+    background-color: $primary-shade;
+    fill: $border-color !important;
+}
+
+
+.side-nav li{
+    color: $c6a6f74;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+li span{
+    display: flex;
+    align-items: center;
+}
+
+
+.nav-icon img{
+margin-right: 10px;
+}
+
+li{
+    display: flex;
+    list-style: none;
+}
+
+.all-section{
+    margin: 30px 0px 15px 0px;
+}
+
+.user-management{
+    margin: 30px 0px 15px 0px;
+}
+
+
+#handle{
+    cursor: pointer;
+}
+
+.side-nav-wrapper{
+    position: relative;
+}
+
+.handle{
+    position: absolute;
+    top: 30px;
+    left: 94%;
+    z-index: 2;
+}

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { EmployeeService } from '../../../services/employees/employee.service';
 
 
 @Component({
@@ -11,10 +12,19 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './alphabet-filter.component.scss'
 })
 export class AlphabetFilterComponent {
-selectedLetter : string | undefined = '';
+employeeService : EmployeeService = inject(EmployeeService);
 alphabet: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+selectedLetter: string | null = null;
+@Output() filterChanged: EventEmitter<string | null> = new EventEmitter<string | null>();
 
   filterByLetter(alphabet:string){
-   console.log(this.selectedLetter);
+    if (this.selectedLetter === alphabet) {
+      this.selectedLetter = null;
+      this.filterChanged.emit(null);
+    } else {
+      this.selectedLetter = alphabet;
+      this.filterChanged.emit(alphabet); 
+    }
+   
   }
 }
