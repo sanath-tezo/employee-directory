@@ -12,7 +12,7 @@
             <div class="col">
                 <span>
                     <span><img src="/assets/svgs/arrow-turn-left-down.svg" alt=""></span>
-                    <input type="button" value="Delete" id="employee-delete-button">
+                    <input type="button" value="Delete" id="employee-delete-button" (click)="deleteSelectedEmployees()" [disabled]="!isAnyEmployeeSelected()" [ngClass]="{'disabled-button': !isAnyEmployeeSelected()}">
                 </span>
             </div>
             <div class="col text-end">
@@ -24,7 +24,8 @@
         <table class="emp-table">
             <thead>
                 <tr>
-                    <td><input type="checkbox" name="" id="head-checkbox" class="table-header-checkbox"></td>
+                    <td><input type="checkbox" name="" id="head-checkbox" class="table-header-checkbox" [(ngModel)]="selectAll" 
+                        (change)="onHeadCheckboxChange()"></td>
                     <td><span><input type="button" value="USER" class="sort-button"> <img src="../assets/svgs/sort.svg"
                                 alt="" class="sb-15"></span></td>
                     <td><span><input type="button" value="LOCATION" class="sort-button"> <img src="../assets/svgs/sort.svg"
@@ -47,7 +48,9 @@
     
             <tbody>
                 <tr *ngFor="let emp of employees">
-                    <td><input type="checkbox" name="" id="head-checkbox" class="table-header-checkbox"></td>
+                    <td><input type="checkbox" name="" id="{{emp.id}}-checkbox" class="emp-record-checkbox"  [(ngModel)]="emp.selected" 
+                        (change)="onEmployeeCheckboxChange()" 
+                        ></td>
                     <td><span>
                             <div class="row align-items-center">
                                 <img src="{{emp.img}}" alt="" class="circle-avatar">

@@ -1,5 +1,5 @@
 import { Department } from "./department";
-import  {Location} from "./location";
+import { Location } from "./location";
 import { Role } from "./role";
 import { Status } from "./status";
 
@@ -14,4 +14,5 @@ export interface Employee {
     status: Status;
     joinDate: string;
     img: string;
+    selected : boolean 
 }

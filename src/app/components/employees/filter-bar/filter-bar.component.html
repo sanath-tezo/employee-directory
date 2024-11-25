@@ -1,32 +1,29 @@
 <div class="filter-bar">
-
     <div>
         <span>Filter</span>
         <img src="/assets/svgs/filter-funnel.svg" alt="filter-funnel">
-        <select name="Status" id="">
-            <option value="1">Dummy</option>
-            <option value="1">Dummy</option>
-            <option value="1">Dummy</option>
-            <option value="1">Dummy</option>
+
+        <!-- Status Dropdown -->
+        <select name="Status" id="status-dropdown" [(ngModel)]="selectedStatus">
+            <option value="null">Status</option>
+            <option *ngFor="let status of statuses" [value]="status.value">{{ status.value }}</option>
         </select>
-        <select name="Location" id="">
-            <option value="1">Dummy</option>
-            <option value="1">Dummy</option>
-            <option value="1">Dummy</option>
-            <option value="1">Dummy</option>
+
+        <!-- Location Dropdown -->
+        <select name="Location" id="location-dropdown" [(ngModel)]="selectedLocation"> 
+            <option value="null">Location</option>
+            <option *ngFor="let location of locations" [value]="location.title">{{ location.title }}</option>
         </select>
-        <select name="Department" id="">
-            <option value="1">Dummy</option>
-            <option value="1">Dummy</option>
-            <option value="1">Dummy</option>
-            <option value="1">Dummy</option>
+
+        <!-- Department Dropdown -->
+        <select name="Department" id="department-dropdown" [(ngModel)]="selectedDepartment">
+            <option value="null">Department</option>
+            <option *ngFor="let department of departments" [value]="department.title">{{ department.title }}</option>
         </select>
     </div>
-    
 
     <div class="reset-apply-row">
-        <input type="button" value="Reset" id="reset-button">
-        <input type="button" value="Apply" id="apply-button">
+        <input type="button" value="Reset" id="reset-button" (click)="resetFilters()">
+        <input type="button" value="Apply" id="apply-button" (click)="applyFilters()">
     </div>
-
 </div>

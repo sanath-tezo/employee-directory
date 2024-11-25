@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { delay, Observable, of } from 'rxjs';
+import { departments, locations, roles, statuses } from '../../data/app-static-data';
 import { Employee } from '../../models/employee';
-import { locations,departments,statuses,roles } from '../../data/app-static-data';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,8 @@ export class EmployeeService {
       empNo: "12345",
       status: statuses[0], // Active
       joinDate: "2021-05-12",
-      img: "https://randomuser.me/api/portraits/women/53.jpg"
+      img: "https://randomuser.me/api/portraits/women/53.jpg",
+      selected:false,
     },
     {
       name: "Bob Smith",
@@ -31,7 +32,8 @@ export class EmployeeService {
       empNo: "67890",
       status: statuses[0], // Active
       joinDate: "2019-08-20",
-      img: "https://randomuser.me/api/portraits/men/44.jpg"
+      img: "https://randomuser.me/api/portraits/men/44.jpg",
+      selected:false,
     },
     {
       name: "Charlie Davis",
@@ -43,7 +45,8 @@ export class EmployeeService {
       empNo: "11223",
       status: statuses[1], // Inactive
       joinDate: "2022-02-25",
-      img: "https://randomuser.me/api/portraits/women/23.jpg"
+      img: "https://randomuser.me/api/portraits/women/23.jpg",
+      selected:false,
     },
     {
       name: "Diana Green",
@@ -55,7 +58,8 @@ export class EmployeeService {
       empNo: "44556",
       status: statuses[0], // Active
       joinDate: "2023-06-30",
-      img: "https://randomuser.me/api/portraits/women/62.jpg"
+      img: "https://randomuser.me/api/portraits/women/62.jpg",
+      selected:false,
     },
     {
       name: "Emma White",
@@ -67,7 +71,8 @@ export class EmployeeService {
       empNo: "55899",
       status: statuses[1], // Inactive
       joinDate: "2018-09-12",
-      img: "https://randomuser.me/api/portraits/women/11.jpg"
+      img: "https://randomuser.me/api/portraits/women/11.jpg",
+      selected:false,
     },
     {
       name: "Frank Black",
@@ -79,7 +84,8 @@ export class EmployeeService {
       empNo: "66778",
       status: statuses[0], // Active
       joinDate: "2020-01-23",
-      img: "https://randomuser.me/api/portraits/men/12.jpg"
+      img: "https://randomuser.me/api/portraits/men/12.jpg",
+      selected:false,
     },
     {
       name: "Grace Blue",
@@ -91,7 +97,8 @@ export class EmployeeService {
       empNo: "77889",
       status: statuses[1], // Inactive
       joinDate: "2017-11-01",
-      img: "https://randomuser.me/api/portraits/women/26.jpg"
+      img: "https://randomuser.me/api/portraits/women/26.jpg",
+      selected:false,
     },
     {
       name: "Henry Smith",
@@ -103,7 +110,8 @@ export class EmployeeService {
       empNo: "88990",
       status: statuses[0], // Active
       joinDate: "2022-02-14",
-      img: "https://randomuser.me/api/portraits/men/22.jpg"
+      img: "https://randomuser.me/api/portraits/men/22.jpg",
+      selected:false,
     },
     {
       name: "Isabella Brown",
@@ -115,7 +123,8 @@ export class EmployeeService {
       empNo: "99001",
       status: statuses[0], // Active
       joinDate: "2023-04-12",
-      img: "https://randomuser.me/api/portraits/women/18.jpg"
+      img: "https://randomuser.me/api/portraits/women/18.jpg",
+      selected:false,
     },
     {
       name: "James Walker",
@@ -127,7 +136,8 @@ export class EmployeeService {
       empNo: "10234",
       status: statuses[0], // Active
       joinDate: "2021-03-01",
-      img: "https://randomuser.me/api/portraits/men/34.jpg"
+      img: "https://randomuser.me/api/portraits/men/34.jpg",
+      selected:false,
     },
     {
       name: "Kimberly Harris",
@@ -139,7 +149,8 @@ export class EmployeeService {
       empNo: "20345",
       status: statuses[1], // Inactive
       joinDate: "2019-07-25",
-      img: "https://randomuser.me/api/portraits/women/38.jpg"
+      img: "https://randomuser.me/api/portraits/women/38.jpg",
+      selected:false,
     },
     {
       name: "Liam Taylor",
@@ -151,7 +162,8 @@ export class EmployeeService {
       empNo: "31456",
       status: statuses[0], // Active
       joinDate: "2020-12-15",
-      img: "https://randomuser.me/api/portraits/men/52.jpg"
+      img: "https://randomuser.me/api/portraits/men/52.jpg",
+      selected:false,
     },
     {
       name: "Mia Martinez",
@@ -163,7 +175,8 @@ export class EmployeeService {
       empNo: "42567",
       status: statuses[1], // Inactive
       joinDate: "2018-06-10",
-      img: "https://randomuser.me/api/portraits/women/45.jpg"
+      img: "https://randomuser.me/api/portraits/women/45.jpg",
+      selected:false,
     },
     {
       name: "Noah Robinson",
@@ -175,7 +188,8 @@ export class EmployeeService {
       empNo: "53678",
       status: statuses[0], // Active
       joinDate: "2021-11-30",
-      img: "https://randomuser.me/api/portraits/men/28.jpg"
+      img: "https://randomuser.me/api/portraits/men/28.jpg",
+      selected:false,
     },
     {
       name: "Olivia Anderson",
@@ -187,7 +201,8 @@ export class EmployeeService {
       empNo: "64789",
       status: statuses[1], // Inactive
       joinDate: "2017-12-12",
-      img: "https://randomuser.me/api/portraits/women/50.jpg"
+      img: "https://randomuser.me/api/portraits/women/50.jpg",
+      selected:false,
     },
     {
       name: "Patrick Lee",
@@ -199,7 +214,8 @@ export class EmployeeService {
       empNo: "75890",
       status: statuses[0], // Active
       joinDate: "2023-01-15",
-      img: "https://randomuser.me/api/portraits/men/37.jpg"
+      img: "https://randomuser.me/api/portraits/men/37.jpg",
+      selected:false,
     },
     {
       name: "Quinn Clark",
@@ -211,7 +227,8 @@ export class EmployeeService {
       empNo: "86901",
       status: statuses[1], // Inactive
       joinDate: "2019-10-09",
-      img: "https://randomuser.me/api/portraits/men/10.jpg"
+      img: "https://randomuser.me/api/portraits/men/10.jpg",
+      selected:false,
     },
     {
       name: "Rachel Young",
@@ -223,7 +240,8 @@ export class EmployeeService {
       empNo: "98012",
       status: statuses[0], // Active
       joinDate: "2022-07-11",
-      img: "https://randomuser.me/api/portraits/women/39.jpg"
+      img: "https://randomuser.me/api/portraits/women/39.jpg",
+      selected:false,
     },
     {
       name: "Samuel Moore",
@@ -235,7 +253,8 @@ export class EmployeeService {
       empNo: "10123",
       status: statuses[0], // Active
       joinDate: "2021-02-28",
-      img: "https://randomuser.me/api/portraits/men/53.jpg"
+      img: "https://randomuser.me/api/portraits/men/53.jpg",
+      selected:false,
     },
     {
       name: "Tessa Scott",
@@ -247,7 +266,8 @@ export class EmployeeService {
       empNo: "11234",
       status: statuses[0], // Active
       joinDate: "2020-08-20",
-      img: "https://randomuser.me/api/portraits/women/29.jpg"
+      img: "https://randomuser.me/api/portraits/women/29.jpg",
+      selected:false,
     },
     {
       name: "Ursula Allen",
@@ -259,7 +279,8 @@ export class EmployeeService {
       empNo: "12345",
       status: statuses[1], // Inactive
       joinDate: "2019-05-17",
-      img: "https://randomuser.me/api/portraits/women/10.jpg"
+      img: "https://randomuser.me/api/portraits/women/10.jpg",
+      selected:false,
     },
     {
       name: "Victor Harris",
@@ -271,7 +292,8 @@ export class EmployeeService {
       empNo: "13456",
       status: statuses[0], // Active
       joinDate: "2023-09-07",
-      img: "https://randomuser.me/api/portraits/men/13.jpg"
+      img: "https://randomuser.me/api/portraits/men/13.jpg",
+      selected:false,
     },
     {
       name: "Wendy Wilson",
@@ -283,7 +305,8 @@ export class EmployeeService {
       empNo: "14567",
       status: statuses[0], // Active
       joinDate: "2022-04-22",
-      img: "https://randomuser.me/api/portraits/women/14.jpg"
+      img: "https://randomuser.me/api/portraits/women/14.jpg",
+      selected:false,
     },
     {
       name: "Xander Collins",
@@ -295,7 +318,8 @@ export class EmployeeService {
       empNo: "15678",
       status: statuses[0], // Active
       joinDate: "2021-03-03",
-      img: "https://randomuser.me/api/portraits/men/8.jpg"
+      img: "https://randomuser.me/api/portraits/men/8.jpg",
+      selected:false,
     },
     {
       name: "Yara Green",
@@ -307,7 +331,8 @@ export class EmployeeService {
       empNo: "16789",
       status: statuses[1], // Inactive
       joinDate: "2019-09-15",
-      img: "https://randomuser.me/api/portraits/women/20.jpg"
+      img: "https://randomuser.me/api/portraits/women/20.jpg",
+      selected:false,
     },
     {
       name: "Zane Brown",
@@ -319,12 +344,15 @@ export class EmployeeService {
       empNo: "17890",
       status: statuses[0], // Active
       joinDate: "2022-10-21",
-      img: "https://randomuser.me/api/portraits/men/19.jpg"
+      img: "https://randomuser.me/api/portraits/men/19.jpg",
+      selected:false,
     }
   ];
   
   
-  
+  updateEmployees(employees: Employee[]){
+    this.employees = employees;
+  }
   
   
   constructor() { }

@@ -42,8 +42,8 @@ thead input[type="button"]{
 
 tbody tr:hover{
 background-color: $primary-shade;
-cursor: pointer;
 }
+
 
 #employee-delete-button{
     background-color: $primary-color;
@@ -62,4 +62,10 @@ cursor: pointer;
     display: flex;
     justify-content: center;
     padding: 20px;
+}
+
+.disabled-button{
+    cursor: not-allowed;
+    background-color: $border-color !important;
+    border:  1px solid $primary-shade !important;
 }

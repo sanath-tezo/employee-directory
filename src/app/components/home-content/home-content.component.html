@@ -2,7 +2,8 @@
     <app-search-bar (searchQueryChanged)="onSearchTextChanged($event)"></app-search-bar>
     <app-employee-description></app-employee-description>
     <app-alphabet-filter (filterChanged)="onAlphabetFilterChanged($event)"></app-alphabet-filter>
-    <app-filter-bar></app-filter-bar>
+    <app-filter-bar
+        (filtersApplied)="onCategoryFiltersApplied($event)"></app-filter-bar>
     @if(this.isLoading){
     <app-loading class="mx-auto"
         style="  display: flex; justify-content: center; align-items: center; margin-top: 20%;">

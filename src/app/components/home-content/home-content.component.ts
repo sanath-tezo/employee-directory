@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ViewChild } from '@angular/core';
 import { Employee } from '../../models/employee';
 import { EmployeeService } from '../../services/employees/employee.service';
 import { LoadingComponent } from "../common/loading/loading.component";
@@ -16,6 +16,8 @@ import { SearchBarComponent } from "../search-bar/search-bar.component";
   styleUrl: './home-content.component.scss'
 })
 export class HomeContentComponent {
+  @ViewChild(EmployeeTableComponent) employeeTable!: EmployeeTableComponent;
+
 
   employees: Employee[] = []; 
   isLoading: boolean = true; 
@@ -23,6 +25,9 @@ export class HomeContentComponent {
   selectedLetter: string | null = null;
   searchQuery : string  | null = null;  
   employeesService : EmployeeService = inject(EmployeeService);
+  selectedStatus : string  | null = null;
+  selectedLocation : string  | null = null;
+  selectedDepartment : string  | null = null;
 
   constructor() {
     
@@ -41,21 +46,34 @@ export class HomeContentComponent {
       }
     )
   }
-
+  applyFilter() : Employee[]{
+   return this.employeesService.filterEmployees(
+      this.filteredEmployees,
+      this.selectedStatus,
+      this.selectedLocation,
+      this.selectedDepartment,
+      this.selectedLetter,
+      this.searchQuery
+    );
+  }
+  onCategoryFiltersApplied(filters: { status: string | null, location: string | null, department: string | null }) {
+    this.employeeTable.resetCheckboxes();
+    this.selectedDepartment = filters.department;
+    this.selectedLocation = filters.location;
+    this.selectedStatus = filters.status;
+    this.filteredEmployees = this.applyFilter();
+  }
   onAlphabetFilterChanged(letter : string | null){
     this.selectedLetter = letter;
-    if(letter){
-      this.filteredEmployees = this.employeesService.filterEmployees(this.filteredEmployees, null,null,null,this.selectedLetter,this.searchQuery);
-    }else{
-      this.filteredEmployees = this.employees;
-    }
+    
+      this.filteredEmployees =  this.applyFilter();
+    
 
   }
 
   onSearchTextChanged(query : string | null){
     this.searchQuery = query;
-    
-      this.filteredEmployees = this.employeesService.filterEmployees(this.filteredEmployees, null,null,null,this.selectedLetter,this.searchQuery);
+      this.filteredEmployees = this.applyFilter();
     
   }
   
