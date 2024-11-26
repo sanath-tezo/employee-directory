@@ -375,7 +375,7 @@ export class EmployeeService {
 }
   getAllEmployees() : Observable<Employee[]> {
     return of(this.employees).pipe(
-      delay(2000)
+      delay(1000)
     );
   }
 }

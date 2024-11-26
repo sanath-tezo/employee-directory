@@ -107,3 +107,32 @@ li{
     left: 94%;
     z-index: 2;
 }
+
+
+.side-nav .side-nav-option.selected .nav-icon {
+    background-color: $primary-shade; 
+    color: $primary-color;
+  }
+  
+  .side-nav .side-nav-option.selected .nav-icon img {
+    filter: brightness(0) saturate(100%) invert(35%) sepia(78%) saturate(6245%) hue-rotate(351deg) brightness(97%) contrast(96%);
+  } 
+  .selected-icon {
+    filter: brightness(0) saturate(100%) invert(35%) sepia(78%) saturate(6245%) hue-rotate(351deg) brightness(97%) contrast(96%);
+
+    
+  }
+  
+  .selected-indicator{
+    background-color: $primary-color;
+    border-top-left-radius: 4px; 
+    border-bottom-left-radius: 4px;
+    width: 5px;
+    margin: 0px;
+
+}
+  
+  .selected .nav-icon-content {
+    font-weight: bold;
+  }
+  

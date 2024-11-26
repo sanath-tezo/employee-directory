@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { departments, locations, statuses } from '../../../data/app-static-data';
 import { Employee } from '../../../models/employee';
@@ -17,6 +17,8 @@ export class FilterBarComponent {
   locations = locations;  
   departments = departments;  // Same for departments
   // Variables for selected dropdown values
+
+  @Input() forRoles!: boolean ;
   selectedStatus: string | null = null;
   selectedLocation: string | null = null;
   selectedDepartment: string | null = null;
@@ -25,7 +27,9 @@ export class FilterBarComponent {
 
   
 
-  constructor(private readonly employeeService: EmployeeService) { }
+  constructor(private readonly employeeService: EmployeeService) { 
+    this.forRoles = false;
+  }
 
   private emitFilters(): void {
     this.filtersApplied.emit({

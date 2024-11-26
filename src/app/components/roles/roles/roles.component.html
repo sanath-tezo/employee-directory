@@ -1,0 +1,17 @@
+<app-search-bar></app-search-bar>
+
+<div class="roles-description mx-4 my-4 row">
+    <div class="col">
+        <p>Roles</p>
+        <p>All the roles are configured here.</p>
+    </div>
+    <div class="col text-end">
+        <input type="button" value="ADD ROLE" class="add-role-button">
+    </div>
+
+</div>
+<app-filter-bar [forRoles]="true"></app-filter-bar>
+     
+<div class="mx-2 my-4 role-container-wrapper">
+    <app-role-card *ngFor="let role of rolesService.getAllRoles()" [role]="role"></app-role-card>
+</div>

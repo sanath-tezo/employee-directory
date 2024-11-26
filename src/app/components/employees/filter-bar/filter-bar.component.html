@@ -2,12 +2,16 @@
     <div>
         <span>Filter</span>
         <img src="/assets/svgs/filter-funnel.svg" alt="filter-funnel">
+        
+        @if(!forRoles){
 
-        <!-- Status Dropdown -->
+            <!-- Status Dropdown -->
         <select name="Status" id="status-dropdown" [(ngModel)]="selectedStatus">
             <option value="null">Status</option>
             <option *ngFor="let status of statuses" [value]="status.value">{{ status.value }}</option>
         </select>
+        }
+        
 
         <!-- Location Dropdown -->
         <select name="Location" id="location-dropdown" [(ngModel)]="selectedLocation"> 

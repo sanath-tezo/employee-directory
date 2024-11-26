@@ -1,4 +1,19 @@
 <div class="main-div">
-    <app-side-nav id="side-nav" class="col-2"></app-side-nav>
-    <app-home-content class="col content"></app-home-content>
+    @if (isSideNavVisible) {
+        <app-side-nav [selectedSection]="selectedDepartment" id="side-nav" class="col-2" (sectionSelected)="onSectionSelected($event)"  (sideNavVisibility)="toggleSideNav($event)" [ngClass]="{'hidden': !isSideNavVisible} "
+    ></app-side-nav>
+    }
+    @else {
+        <div class="handle" id="handle" (click)="toggleSideNav(true)">
+            <img src="../assets/images/handle.png" alt="" >
+        </div>
+    }
+    
+    <div class="col content" [ngSwitch]="selectedDepartment">
+        <app-dashboard *ngSwitchCase="'dashboard'"></app-dashboard>
+        <app-home-content *ngSwitchCase="'employees'"></app-home-content>
+        <app-roles *ngSwitchCase="'roles'"></app-roles>
+        <app-access-rights *ngSwitchCase="'access-rights'"></app-access-rights>
+    </div>
+    
 </div>

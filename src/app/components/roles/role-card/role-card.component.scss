@@ -1,0 +1,20 @@
+@import "../../../../styles.scss";
+
+.role-container{
+    border: 1px solid $cd8dbe0;
+    border-radius: 6px;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.view-all-employees-button{
+    border: none;
+    background-color: $white;
+    
+}
+.role-title{
+    font-weight: 900;
+    font-size: 20px;
+}
+

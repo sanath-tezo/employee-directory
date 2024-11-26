@@ -1,0 +1,21 @@
+<div class="role-container">
+    <div class="d-flex justify-content-between mb-4">
+        <span class="role-title">{{role.title}}</span>
+        <img src="../assets/svgs/edit.svg" alt="" class="disabled-button">
+    </div>
+    <div class="d-flex justify-content-between mb-4 role-fields-text">
+        <span class="d-flex"><img src="../assets/svgs/team.svg" alt="" class="mr-1">Department</span>
+        <div id="dept-name">{{role.department}}</div>
+    </div>
+    <div class="d-flex justify-content-between mb-4 role-fields-text">
+        <span class="flex"><img src="../assets/svgs/location-pin.svg" alt="" class="mr-1">Location</span>
+        <div id="location-name">{{role.location}}</div>
+    </div>
+    <div class="d-flex justify-content-between mb-4 role-fields-text">
+        <span>Total Employees</span>
+        <div class="image-stack" id="imageStack-id-${role.id}"></div>
+    </div>
+    <div class="d-flex justify-content-end" >
+        <span><button class="view-all-employees-button role-fields-text">View all Employees&nbsp;&nbsp;<img src="../assets/svgs/arrow-forward-straight.svg" alt=""></button></span>
+    </div>
+</div>
