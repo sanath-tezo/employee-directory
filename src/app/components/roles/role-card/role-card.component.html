@@ -13,9 +13,16 @@
     </div>
     <div class="d-flex justify-content-between mb-4 role-fields-text">
         <span>Total Employees</span>
-        <div class="image-stack" id="imageStack-id-${role.id}"></div>
+        <div class="image-stack">
+            <img *ngFor="let emp of employeesForRole.slice(0, 3)" [src]="emp.img" [alt]="emp.name" class="profile" />
+            
+            <span *ngIf="employeesForRole.length > 3" class="more">
+                +{{employeesForRole.length - 3}}
+            </span>
+        </div>
     </div>
-    <div class="d-flex justify-content-end" >
-        <span><button class="view-all-employees-button role-fields-text">View all Employees&nbsp;&nbsp;<img src="../assets/svgs/arrow-forward-straight.svg" alt=""></button></span>
+    <div class="d-flex justify-content-end">
+        <span><button class="view-all-employees-button role-fields-text">View all Employees&nbsp;&nbsp;<img
+                    src="../assets/svgs/arrow-forward-straight.svg" alt=""></button></span>
     </div>
 </div>

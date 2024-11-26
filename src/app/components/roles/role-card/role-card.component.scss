@@ -18,3 +18,40 @@
     font-size: 20px;
 }
 
+
+.image-stack {
+    display: flex;
+    align-items: center;
+    position: relative; 
+  }
+  
+  .image-container {
+    position: relative; 
+  }
+ 
+.profile {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: -8px;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .more {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-color: $white;
+    color: $c576580;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 100%;
+    z-index: 1; 
+  }
+  

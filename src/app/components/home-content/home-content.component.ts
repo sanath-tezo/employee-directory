@@ -35,16 +35,10 @@ export class HomeContentComponent {
 
   ngOnInit(){
 
-    this.employeesService.getAllEmployees().subscribe(
-      (data : Employee[]) => {
+    const data = this.employeesService.getAllEmployees()
         this.employees = data;
         this.filteredEmployees = data;
         this.isLoading = false;
-      },
-      (error) => {
-        this.isLoading = false;
-      }
-    )
   }
   applyFilter() : Employee[]{
    return this.employeesService.filterEmployees(

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { delay, Observable, of } from 'rxjs';
 import { departments, locations, roles, statuses } from '../../data/app-static-data';
 import { Employee } from '../../models/employee';
 
@@ -350,13 +349,28 @@ export class EmployeeService {
   ];
   
   
-  updateEmployees(employees: Employee[]){
-    this.employees = employees;
-  }
   
   
   constructor() { }
-  
+   
+  deleteEmployees(employees:Employee[]) : Employee[] {
+   
+    const selectedEmployees = employees;
+ 
+    
+    if (selectedEmployees.length === 0) {
+      alert("No employees selected for deletion.");
+      return this.employees;
+    }
+ 
+    
+    const confirmationMessage = `Are you sure you want to delete ${selectedEmployees.length} selected employee(s)?`;
+    if (confirm(confirmationMessage)) {
+      this.employees = this.employees.filter(emp => !emp.selected);
+    }  
+    return this.employees;
+
+   }
 
 
    filterEmployees(status : string | null, location :string | null, department : string | null, firstChar : string | null, query : string | null) : Employee[] {
@@ -373,9 +387,7 @@ export class EmployeeService {
             matchesQuery);
     });
 }
-  getAllEmployees() : Observable<Employee[]> {
-    return of(this.employees).pipe(
-      delay(1000)
-    );
+  getAllEmployees() : Employee[] {
+    return this.employees;
   }
 }

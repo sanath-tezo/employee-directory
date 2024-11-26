@@ -1,6 +1,8 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { roles } from '../../data/app-static-data';
 import { Role } from '../../models/role';
+import { Employee } from '../../models/employee';
+import { EmployeeService } from '../employees/employee.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,7 @@ import { Role } from '../../models/role';
 export class RoleService {
 
   constructor() { }
-
+  private employeeService : EmployeeService = inject(EmployeeService);
   private allRoles = roles;
 
   getAllRoles() : Role[]{
@@ -24,5 +26,11 @@ export class RoleService {
         return (matchesDepartment && matchesLocation && matchesQuery);
     });
 
+  }
+
+  getEmployeesOfRole(role : Role) : Employee[]{
+    return this.employeeService.getAllEmployees().filter((emp) => {
+      return emp.role.id === role.id;
+    });
   }
 }

@@ -43,24 +43,11 @@ export class EmployeeTableComponent {
   }
 
   deleteSelectedEmployees() {
-   
-   const selectedEmployees = this.employees.filter(emp => emp.selected);
-
-   
-   if (selectedEmployees.length === 0) {
-     alert("No employees selected for deletion.");
-     return;
-   }
-
-   
-   const confirmationMessage = `Are you sure you want to delete ${selectedEmployees.length} selected employee(s)?`;
-   if (confirm(confirmationMessage)) {
-   
-     this.employees = this.employees.filter(emp => !emp.selected);
-     this.employeeService.updateEmployees(this.employees);
-
-   }  
+     const selectedEmployees = this.employees.filter(emp => emp.selected);
+     this.employees= this.employeeService.deleteEmployees(selectedEmployees);
+     this.resetCheckboxes();
   }
+
   isAnyEmployeeSelected(): boolean {
     return this.employees.some(emp => emp.selected);
   }
