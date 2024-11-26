@@ -48,7 +48,6 @@ export class HomeContentComponent {
   }
   applyFilter() : Employee[]{
    return this.employeesService.filterEmployees(
-      this.filteredEmployees,
       this.selectedStatus,
       this.selectedLocation,
       this.selectedDepartment,
@@ -74,7 +73,6 @@ export class HomeContentComponent {
   onSearchTextChanged(query : string | null){
     this.searchQuery = query;
       this.filteredEmployees = this.applyFilter();
-    
   }
   
 

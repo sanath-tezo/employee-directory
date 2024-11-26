@@ -20,10 +20,10 @@ export const locations: Location[] = [
 
 // List of Roles
 export const roles: Role[] = [
-  { title: "Software Engineer", department: "Engineering", location: "New York", id: "SE001" },
-  { title: "Sales Manager", department: "Sales", location: "San Francisco", id: "SM001" },
-  { title: "Marketing Specialist", department: "Marketing", location: "London", id: "MS001" },
-  { title: "Data Scientist", department: "Engineering", location: "Berlin", id: "DS001" }
+  { title: "Software Engineer", department: departments[0], location: locations[0], id: "SE001" },
+  { title: "Sales Manager", department: departments[1], location: locations[1], id: "SM001" },
+  { title: "Marketing Specialist", department: departments[2], location:locations[2], id: "MS001" },
+  { title: "Data Scientist", department: departments[0], location: locations[3], id: "DS001" }
 ];
 
 // List of Statuses

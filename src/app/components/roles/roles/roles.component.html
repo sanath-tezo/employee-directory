@@ -1,4 +1,4 @@
-<app-search-bar></app-search-bar>
+<app-search-bar (searchQueryChanged)="onSearchQueryChanged($event)"></app-search-bar>
 
 <div class="roles-description mx-4 my-4 row">
     <div class="col">
@@ -10,8 +10,16 @@
     </div>
 
 </div>
-<app-filter-bar [forRoles]="true"></app-filter-bar>
-     
-<div class="mx-2 my-4 role-container-wrapper">
-    <app-role-card *ngFor="let role of rolesService.getAllRoles()" [role]="role"></app-role-card>
+<app-filter-bar [forRoles]="true" (filtersApplied)="onCategoryFiltersApplied($event)"></app-filter-bar>
+
+@if (filteredRoles.length === 0) {
+<div class="no-data-found">
+    No Data found!
 </div>
+}
+
+@else {
+<div class="mx-2 my-4 role-container-wrapper">
+    <app-role-card *ngFor="let role of filteredRoles" [role]="role"></app-role-card>
+</div>
+}

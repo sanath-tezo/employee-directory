@@ -14,6 +14,11 @@
    grid-template-columns: repeat(3, 1fr); 
    justify-content: start;
 }
+.no-data-found{
+   display: flex;
+   justify-content: center;
+   padding: 20px;
+}
 
 @media (max-width: 768px) {
    .role-container-wrapper {

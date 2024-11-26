@@ -359,7 +359,7 @@ export class EmployeeService {
   
 
 
-   filterEmployees(employees: Employee[], status : string | null, location :string | null, department : string | null, firstChar : string | null, query : string | null) : Employee[] {
+   filterEmployees(status : string | null, location :string | null, department : string | null, firstChar : string | null, query : string | null) : Employee[] {
     return this.employees.filter((employee) => {
         const matchesStatus = !status || employee.status.value === status;
         const matchesLocation = !location || employee.location.title === location;

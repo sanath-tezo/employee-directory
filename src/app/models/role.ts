@@ -1,6 +1,9 @@
+import { Department } from "./department";
+import { Location } from "./location";
+
 export interface Role {
     title: string;
-    department: string;
-    location: string;
+    department: Department;
+    location: Location;
     id: string;
   }
