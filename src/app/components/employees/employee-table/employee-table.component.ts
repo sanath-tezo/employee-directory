@@ -52,4 +52,8 @@ export class EmployeeTableComponent {
     return this.employees.some(emp => emp.selected);
   }
 
+  isEmployeeActive(emp : Employee) : boolean{
+      return emp.status.value === "Active";
+  }
+
 }

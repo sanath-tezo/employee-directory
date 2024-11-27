@@ -64,7 +64,7 @@
                     <td><span>{{emp.department.title}}</span></td>
                     <td><span>{{emp.role.title}}</span></td>
                     <td><span>{{emp.empNo}}</span></td>
-                    <td><span>{{emp.status.value}}</span></td>
+                    <td><span [ngClass]="isEmployeeActive(emp) ? 'active' : 'inactive'">{{emp.status.value}}</span></td>
                     <td><span>{{emp.joinDate}}</span></td>
                     <td><img src="../assets/svgs/more-hz.svg" alt=""></td>
                 </tr>

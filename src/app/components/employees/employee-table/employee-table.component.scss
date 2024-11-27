@@ -69,3 +69,20 @@ background-color: $primary-shade;
     background-color: $border-color !important;
     border:  1px solid $primary-shade !important;
 }
+
+.active{
+   background-color: $ce7f4e8; 
+   color: $c549c84;
+   padding: 10px;
+   border-radius: 6px;
+   display: block;
+   text-align: center;
+}
+.inactive{
+    background-color: $primary-shade;
+    color: $primary-color;
+    padding: 10px;
+    border-radius: 6px;
+    display: block;
+    text-align: center;
+}

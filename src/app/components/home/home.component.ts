@@ -18,7 +18,7 @@ import { roles } from '../../data/app-static-data';
 })
 export class HomeComponent {
   
-  selectedDepartment : string = "roles";
+  selectedDepartment : string = "employees";
   isSideNavVisible: boolean = true;
   currentSelectedRole : Role = roles[0];
 
