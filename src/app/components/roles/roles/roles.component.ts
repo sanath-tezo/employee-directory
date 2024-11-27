@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { Role } from '../../../models/role';
 import { RoleService } from '../../../services/roles/role.service';
 import { FilterBarComponent } from "../../employees/filter-bar/filter-bar.component";
@@ -22,6 +22,7 @@ export class RolesComponent {
   selectedLocation : string | null = null;
   selectedDepartment : string | null = null;
   searchQuery : string | null = null;
+  @Output() roleClicked : EventEmitter<Role> = new EventEmitter<Role>();
    constructor() {
     this.filteredRoles = this.rolesService.getAllRoles();
     this.allRoles = this.rolesService.getAllRoles();
@@ -44,6 +45,9 @@ export class RolesComponent {
     this.applyFilters();
    }
 
+   onViewEmployeeClick(role : Role){
+    this.roleClicked.emit(role);
+   }
   
 
 }

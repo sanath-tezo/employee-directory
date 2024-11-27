@@ -39,15 +39,15 @@
           <br>
           <br>
           <ul>
-            <li class="side-nav-option my-2" (click)="onSelectOption('roles')" [class.selected]="isSelected('roles')">
+            <li class="side-nav-option my-2" (click)="onSelectOption('roles')" [class.selected]="isSelected('roles') || isSelected('role-details')">
               <span class="nav-icon">
                 <span class="nav-icon-content">
-                  <img src="../assets/svgs/roles.svg" alt="" [class.selected-icon]="isSelected('roles')">
+                  <img src="../assets/svgs/roles.svg" alt="" [class.selected-icon]="isSelected('roles') || isSelected('role-details')">
                   Roles
                 </span>
                 <img src="../assets/svgs/arrow-forward.svg" alt="" class="arrow-forward-icon">
               </span>
-              <p [class.selected-indicator]="isSelected('roles')"></p>
+              <p [class.selected-indicator]="isSelected('roles') || isSelected('role-details')"></p>
             </li>
             <li class="side-nav-option" (click)="onSelectOption('access-rights')" [class.selected]="isSelected('access-rights')">
               <span class="nav-icon">

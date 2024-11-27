@@ -1,0 +1,28 @@
+@import "../../../../styles.scss";
+.role-container{
+    border: 1px solid $cd8dbe0;
+    border-radius: 6px;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    margin: 10px;
+}
+.emp-details{
+    display: flex;
+    margin: 0px 10px 0px 10px;
+    align-items: center;
+}
+.search-bar-profile-pic{
+    height: 40px;
+    width: 40px;
+    border-radius: 100px;
+}
+.emp-name-and-role{
+    margin: 0px 10px 0px 10px;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.role-fields-text{
+    color: $c576580;
+    font-size: 15px;
+}

@@ -1,0 +1,26 @@
+<app-search-bar (searchQueryChanged)="onSearchTextChanged($event)"></app-search-bar>
+<div class="row my-2 mx-4">
+    <div class="col my-2">
+        <p>Roles > Employees</p>
+        <p>Find all of your company's employee accounts and their associated roles.</p>
+    </div>
+    <div class="col text-end my-2">
+        <input type="button" value="ADD EMPLOYEE" class="add-employee-button">
+    </div>
+</div>
+<div class="mx-4">
+    <h5>Role Description</h5>
+    <p>
+        Configure the providers that are available to users when they sign in. Configure the providers that are
+        available to
+        users when they sign in.Configure the providers that are available to users when they sign in. Configure the
+        providers that are available to users when they sign in.Configure the providers that are available to users when
+        they sign in. Configure the providers that are available to users when they sign in.
+    </p>
+</div>
+
+
+<div class="employees-of-role mx-2">
+    <app-employee-card *ngFor="let emp of this.filteredEmployees"
+        [employee]="emp"></app-employee-card>
+</div>

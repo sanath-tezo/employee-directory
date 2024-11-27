@@ -1,1 +1,36 @@
-<p>employee-card works!</p>
+<div class="role-container">
+    <div class="emp-details mb-4">
+      <img src="{{employee.img}}" alt="" class="search-bar-profile-pic">
+      <div class="emp-name-and-role">
+        <div class="f16">{{employee.name}}</div>
+        <div style="font-size:12px; margin-top:2px; color: #8994a6">
+          {{employee.role.title}}
+        </div>
+      </div>
+    </div>
+    <div class="mb-2 ml-2 role-fields-text">
+      <span class="flex">
+        <img src="../assets/svgs/id.svg" alt="" class="mr-2">{{employee.empNo}}
+      </span>
+    </div>
+    <div class="mb-2 ml-2 role-fields-text">
+      <span class="flex">
+        <img src="../assets/svgs/email.svg" alt="" class="mr-2">{{employee.email}}
+      </span>
+    </div>
+    <div class="mb-2 ml-2 role-fields-text">
+      <span class="flex">
+        <img src="../assets/svgs/team.svg" alt="" class="mr-2">{{employee.department.title}}
+      </span>
+    </div>
+    <div class="mb-2 ml-2 role-fields-text">
+      <span class="flex">
+        <img src="../assets/svgs/location-pin.svg" alt="" class="mr-2">{{employee.location.title}}
+      </span>
+    </div>
+    <div>
+      <span class="flex float-right role-fields-text" id="view-employee-{{employee.id}}" style="cursor:pointer">
+        View&nbsp;&nbsp;<img src="../assets/svgs/arrow-forward-straight.svg" alt="">
+      </span>
+    </div>
+  </div>

@@ -1,8 +1,8 @@
-import { Component, inject, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { Employee } from '../../../models/employee';
 import { Role } from '../../../models/role';
 import { RoleService } from '../../../services/roles/role.service';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-role-card',
@@ -14,13 +14,19 @@ import { CommonModule } from '@angular/common';
 export class RoleCardComponent {
 
   @Input() role! : Role;
+  @Output() viewEmployeesClick : EventEmitter<Role> = new EventEmitter<Role>();
   roleService : RoleService = inject(RoleService)
   employeesForRole: Employee[] = [];
+  
 
   ngOnInit(): void {
     this.employeesForRole = this.roleService.getEmployeesOfRole(this.role);
   }
 
+
+  onViewEmployeesClick(){
+  this.viewEmployeesClick.emit(this.role);
+  }
 
   
 

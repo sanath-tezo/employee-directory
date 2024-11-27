@@ -20,6 +20,6 @@
 
 @else {
 <div class="mx-2 my-4 role-container-wrapper">
-    <app-role-card *ngFor="let role of filteredRoles" [role]="role"></app-role-card>
+    <app-role-card *ngFor="let role of filteredRoles" [role]="role" (viewEmployeesClick)="onViewEmployeeClick($event)"></app-role-card>
 </div>
 }

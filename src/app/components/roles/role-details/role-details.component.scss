@@ -1,0 +1,32 @@
+@import "../../../../styles.scss";
+
+ .add-employee-button{
+    background-color: $primary-color;
+    color: $white;
+    border-radius: 6px;
+    border: 1px solid $primary-color;
+    padding: 4px 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+ }
+ 
+ .export-button:hover:hover{
+     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); 
+ }
+
+ .employees-of-role{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+   justify-content: start;
+ }
+
+ @media (max-width: 768px) {
+    .employees-of-role{
+        grid-template-columns: repeat(2, 1fr);  /* 2 cards per row for smaller screens */
+    }
+ }
+ 
+ @media (max-width: 480px) {
+    .employees-of-role{
+        grid-template-columns: 1fr;  /* 1 card per row for very small screens */
+    }
+ }
