@@ -15,8 +15,18 @@
    border: 1px solid $primary-color;
    padding: 4px 16px;
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+   text-align: center;
+   cursor: pointer;
 }
 
+.add-employee-button input{
+    background-color: $primary-color;
+    border: none;
+    color: $white;
+    text-align: center;
+    margin-left: 5px;
+
+}
 .export-button:hover,.add-employee-button:hover{
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); 
 }

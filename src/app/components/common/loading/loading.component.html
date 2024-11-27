@@ -1,1 +1,6 @@
-<div class="loader"></div>
+<div *ngIf="isLoading" class="overlay">
+    <div class="loader-container">
+      <div class="spinner"></div>
+    </div>
+  </div>
+  

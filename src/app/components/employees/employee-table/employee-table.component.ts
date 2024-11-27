@@ -3,11 +3,12 @@ import { Component, inject, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Employee } from '../../../models/employee';
 import { EmployeeService } from '../../../services/employees/employee.service';
+import { LoadingComponent } from "../../common/loading/loading.component";
 
 @Component({
   selector: 'app-employee-table',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule, FormsModule, LoadingComponent],
   templateUrl: './employee-table.component.html',
   styleUrl: './employee-table.component.scss'
 })
