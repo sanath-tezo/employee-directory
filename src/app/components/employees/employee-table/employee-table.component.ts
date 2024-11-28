@@ -17,10 +17,50 @@ export class EmployeeTableComponent {
   @Input()  employees! : Employee[] ;
   employeeService : EmployeeService = inject(EmployeeService);
   selectAll: boolean = false;
+  sortBy: keyof Employee = 'name';
+  sortOrder: boolean = true;  
   onHeadCheckboxChange() {
     this.employees.forEach(emp => {
       emp.selected = this.selectAll;
     });
+  }
+
+
+  sortColumn(column: keyof Employee) {
+    // Toggle sort order if same column is clicked again
+    if (this.sortBy === column) {
+      this.sortOrder = !this.sortOrder;
+    } else {
+      this.sortBy = column;
+      this.sortOrder = true;  // Default to ascending
+    }
+    this.sortEmployees();
+  }
+
+  sortEmployees() {
+    if (this.sortBy) {
+      this.employees.sort((a, b) => {
+        let valA = a[this.sortBy];
+        let valB = b[this.sortBy];
+        
+        if (this.sortBy === 'location' || this.sortBy === 'department' || this.sortBy === 'role') {
+          // Handling objects for location, department, and role (sorting by title)
+          valA = a[this.sortBy].title;
+          valB = b[this.sortBy].title;
+        }
+        if(this.sortBy === 'status'){
+          valA = a[this.sortBy].value;
+          valB = b[this.sortBy].value;
+        }
+        
+        if (valA < valB) {
+          return this.sortOrder ? -1 : 1;
+        } else if (valA > valB) {
+          return this.sortOrder ? 1 : -1;
+        }
+        return 0;
+      });
+    }
   }
 
   resetCheckboxes() {

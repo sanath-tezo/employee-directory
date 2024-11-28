@@ -24,19 +24,19 @@
                 <tr>
                     <td><input type="checkbox" name="" id="head-checkbox" class="table-header-checkbox" [(ngModel)]="selectAll" 
                         (change)="onHeadCheckboxChange()"></td>
-                    <td><span><input type="button" value="USER" class="sort-button"> <img src="../assets/svgs/sort.svg"
+                    <td><span><input type="button" value="USER" class="sort-button" (click)="sortColumn('name')"> <img src="../assets/svgs/sort.svg"
                                 alt="" class="sb-15"></span></td>
-                    <td><span><input type="button" value="LOCATION" class="sort-button"> <img src="../assets/svgs/sort.svg"
+                    <td><span><input type="button" value="LOCATION" class="sort-button" (click)="sortColumn('location')"> <img src="../assets/svgs/sort.svg"
                                 alt="" class="sb-15"></span></td>
-                    <td><span><input type="button" value="DEPARTMENT" class="sort-button"> <img
+                    <td><span><input type="button" value="DEPARTMENT" class="sort-button" (click)="sortColumn('department')"> <img
                                 src="../assets/svgs/sort.svg" alt="" class="sb-15"></span></td>
-                    <td><span><input type="button" value="ROLE" class="sort-button"> <img src="../assets/svgs/sort.svg"
+                    <td><span><input type="button" value="ROLE" class="sort-button" (click)="sortColumn('role')"> <img src="../assets/svgs/sort.svg"
                                 alt="" class="sb-15"></span></td>
-                    <td><span><input type="button" value="EMP NO" class="sort-button"> <img src="../assets/svgs/sort.svg"
+                    <td><span><input type="button" value="EMP NO" class="sort-button" (click)="sortColumn('empNo')"> <img src="../assets/svgs/sort.svg"
                                 alt="" class="sb-15"></span></td>
-                    <td><span><input type="button" value="STATUS" class="sort-button"> <img src="../assets/svgs/sort.svg"
+                    <td><span><input type="button" value="STATUS" class="sort-button" (click)="sortColumn('status')"> <img src="../assets/svgs/sort.svg"
                                 alt="" class="sb-15"></span></td>
-                    <td><span><input type="button" value="JOIN DT" class="sort-button"> <img src="../assets/svgs/sort.svg"
+                    <td><span><input type="button" value="JOIN DT" class="sort-button" (click)="sortColumn('joinDate')"> <img src="../assets/svgs/sort.svg"
                                 alt="" class="sb-15"></span></td>
                     <td><img src="../assets/svgs/more-hz.svg" alt=""></td>
                 </tr>
