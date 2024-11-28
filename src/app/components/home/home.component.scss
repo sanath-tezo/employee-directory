@@ -10,11 +10,6 @@
     overflow-y: auto;
 }
 .small-screen-handle{
-    cursor: pointer;
-    transform: rotate(180deg);
-    width: 60px;
-    height: 60px;
-    position: absolute;
     display: none;
 }
 
@@ -57,11 +52,15 @@
         display: none;
     }
     .small-screen-handle{
+        cursor: pointer;
         display: block;
         z-index: 100;
-        top: 90%;
-        left: 90%;
-        display: block;
+        top: 85%;
+        left: 80%;
+        transform: rotate(180deg);
+        width: 160px;
+        height: 160px;
+        position: absolute;        
     }
     
   }
