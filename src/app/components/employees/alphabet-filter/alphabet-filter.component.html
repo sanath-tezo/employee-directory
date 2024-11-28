@@ -3,7 +3,7 @@
 
     <div class="letter-buttons col-11 flex-grow-1 ">
 
-        <div class="row d-flex justify-content-between">
+        <div class="row d-flex justify-content-between letter-buttons-wrapper">
             <button *ngFor="let letter of alphabet" (click)="filterByLetter(letter)" id="letter-button-{{letter}}"
             [ngClass]="{'selected': selectedLetter === letter}"     
             class="letter-button">

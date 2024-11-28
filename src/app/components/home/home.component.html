@@ -1,7 +1,9 @@
 <div class="main-div">
+    <div class="small-screen-handle" (click)="toggleSideNav(!isSideNavVisible)"> <img src="/assets/images/handle.png"
+            alt=""></div>
     @if (isSideNavVisible) {
-    <app-side-nav [selectedSection]="selectedDepartment" id="side-nav" class="col-2"
-        (sectionSelected)="onSectionSelected($event)" (sideNavVisibility)="toggleSideNav($event)"
+    <app-side-nav [isSideNavVisible]="isSideNavVisible" [selectedSection]="selectedDepartment" id="side-nav"
+         (sectionSelected)="onSectionSelected($event)" (sideNavVisibility)="toggleSideNav($event)"
         [ngClass]="{'hidden': !isSideNavVisible} "></app-side-nav>
     }
     @else {

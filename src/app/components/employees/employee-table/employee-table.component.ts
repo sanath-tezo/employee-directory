@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { Employee } from '../../../models/employee';
 import { EmployeeService } from '../../../services/employees/employee.service';
 import { LoadingComponent } from "../../common/loading/loading.component";
+import { EmployeeCardComponent } from "../employee-card/employee-card.component";
 
 @Component({
   selector: 'app-employee-table',
   standalone: true,
-  imports: [CommonModule, FormsModule, LoadingComponent],
+  imports: [CommonModule, FormsModule, EmployeeCardComponent],
   templateUrl: './employee-table.component.html',
   styleUrl: './employee-table.component.scss'
 })

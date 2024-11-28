@@ -86,3 +86,19 @@ background-color: $primary-shade;
     display: block;
     text-align: center;
 }
+.card-view{
+    display: none;
+}
+
+
+@media (max-width: 1085px) {
+    .table-view {
+      display: none;
+    }
+
+    
+    
+    .card-view {
+      display: block;
+    }
+  }

@@ -9,20 +9,29 @@
 .content{
     overflow-y: auto;
 }
+.small-screen-handle{
+    cursor: pointer;
+    transform: rotate(180deg);
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    display: none;
+}
 
-.handle{
+ .handle{
     cursor: pointer;
     transform: rotate(180deg);
     width: 36px;
     height: 36px;
     margin-left: 20px;
     margin-top: 30px;
+    position: relative;
+    left: 20px;
+    z-index: 10;
 }
 
-.side-nav {
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-    position: relative;
-    z-index: 1;  /* Ensure it is above other content when visible */
+#side-nav {
+    width: 15%; 
   }
   
   .hidden {
@@ -31,3 +40,28 @@
     transform: translateX(-100%);  /* Shift the sidebar off-screen */
   }
   
+
+
+  
+  @media screen and (max-width : 1300px) {
+    #side-nav{
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+        display: block;
+        position: absolute;
+        z-index: 200;
+        width: 300px ;
+        flex: 0 0 auto;
+        background-color: $white;
+    }
+    .handle{
+        display: none;
+    }
+    .small-screen-handle{
+        display: block;
+        z-index: 100;
+        top: 90%;
+        left: 90%;
+        display: block;
+    }
+    
+  }

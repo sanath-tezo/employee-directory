@@ -1,6 +1,4 @@
-<div class="emp-table-wrapper mx-4 my-4" id="emp-table-id">
-
-
+<div class="emp-table-wrapper mx-4 my-4 table-view" id="emp-table-id">
 
     @if(employees.length === 0){
         <div class="no-data-found">
@@ -73,6 +71,10 @@
         </table>
     }
 
+</div>
+
+<div class="card-view mx-2 my-4">
+    <app-employee-card *ngFor="let emp of employees" [employee]="emp"></app-employee-card>
 </div>
 
 <div class="ml-4">
